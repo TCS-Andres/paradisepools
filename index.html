@@ -478,13 +478,15 @@
       object-fit: cover;
       display: block;
     }
-    /* Positioning overrides that match the component layout */
-    #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -30vh; left: 5vw; height: 30vh; width: 35vw; position: absolute; }
-    #zoom-parallax .zp-item[data-i="2"] .zp-img { top: -10vh; left: -25vw; height: 45vh; width: 20vw; position: absolute; }
-    #zoom-parallax .zp-item[data-i="3"] .zp-img { left: 27.5vw; height: 25vh; width: 25vw; position: absolute; }
-    #zoom-parallax .zp-item[data-i="4"] .zp-img { top: 27.5vh; left: 5vw; height: 25vh; width: 20vw; position: absolute; }
-    #zoom-parallax .zp-item[data-i="5"] .zp-img { top: 27.5vh; left: -22.5vw; height: 25vh; width: 30vw; position: absolute; }
-    #zoom-parallax .zp-item[data-i="6"] .zp-img { top: 22.5vh; left: 25vw; height: 15vh; width: 15vw; position: absolute; }
+    /* Each .zp-img is a flex child of a flex-centered parent, so it starts centered.
+       Using position: relative with top/left shifts it AS AN OFFSET from center,
+       matching the original React component's layout intent. */
+    #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -30vh; left: 10vw; height: 30vh; width: 35vw; }
+    #zoom-parallax .zp-item[data-i="2"] .zp-img { top: -8vh; left: -32vw; height: 40vh; width: 22vw; }
+    #zoom-parallax .zp-item[data-i="3"] .zp-img { top: -2vh; left: 32vw; height: 26vh; width: 22vw; }
+    #zoom-parallax .zp-item[data-i="4"] .zp-img { top: 30vh; left: -30vw; height: 24vh; width: 22vw; }
+    #zoom-parallax .zp-item[data-i="5"] .zp-img { top: 32vh; left: 5vw; height: 24vh; width: 28vw; }
+    #zoom-parallax .zp-item[data-i="6"] .zp-img { top: 32vh; left: 32vw; height: 20vh; width: 18vw; }
 
     @media (max-width: 640px) {
       .hero { min-height: 92vh; }
