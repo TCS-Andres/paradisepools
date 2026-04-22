@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paradise Pools & Pressure Cleaning — Broward & Miami-Dade</title>
+  <meta name="description" content="Professional pool service and pressure cleaning for homeowners across Broward and Miami-Dade. Crystal-clear pools, spotless surfaces, weekends you actually enjoy." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paradise: {
+              blue: '#2E9CD6',
+              'blue-dark': '#1C6B94',
+              pink: '#E8528A',
+            },
+            ink: '#0B1220',
+            mist: '#F4F8FB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 30px -12px rgba(28, 107, 148, 0.18)',
+            card: '0 20px 40px -20px rgba(11, 18, 32, 0.18)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --paradise-blue: #2E9CD6;
+      --paradise-blue-dark: #1C6B94;
+      --paradise-pink: #E8528A;
+      --ink: #0B1220;
+      --mist: #F4F8FB;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .font-display { font-family: 'Poppins', system-ui, sans-serif; }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--paradise-blue);
+    }
+
+    .btn-primary {
+      background: var(--paradise-blue);
+      color: #fff;
+      padding: 0.9rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 20px -6px rgba(46, 156, 214, 0.55);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary:hover { background: var(--paradise-blue-dark); transform: translateY(-1px); }
+    .btn-primary:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px rgba(46, 156, 214, 0.45); }
+
+    .btn-outline-white {
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      color: #fff;
+      padding: 0.85rem 1.55rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s ease;
+    }
+    .btn-outline-white:hover { background: rgba(255, 255, 255, 0.12); }
+
+    .btn-on-dark {
+      background: #fff;
+      color: var(--paradise-blue-dark);
+      padding: 0.9rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn-on-dark:hover { background: #F1FAFF; transform: translateY(-1px); }
+
+    .link-underline {
+      position: relative;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: var(--paradise-blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .link-underline:hover::after,
+    .link-underline:focus-visible::after { transform: scaleX(1); }
+    .link-underline:focus-visible { outline: none; color: var(--paradise-blue-dark); }
+
+    /* Nav */
+    #site-nav {
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      background: transparent;
+    }
+    #site-nav.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 4px 20px -10px rgba(11, 18, 32, 0.15);
+      border-bottom: 1px solid rgba(11, 18, 32, 0.06);
+    }
+    #site-nav .nav-link { color: #fff; }
+    #site-nav.scrolled .nav-link { color: var(--ink); }
+    #site-nav .brand-tag { color: rgba(255, 255, 255, 0.8); }
+    #site-nav.scrolled .brand-tag { color: #4b5563; }
+    #site-nav .phone-pill {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    #site-nav.scrolled .phone-pill {
+      color: var(--paradise-blue-dark);
+      border-color: rgba(28, 107, 148, 0.2);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background-image: url('assets/hero-pool.jpg'), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2400&q=80');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 18, 32, 0.55) 0%, rgba(28, 107, 148, 0.35) 45%, rgba(11, 18, 32, 0.75) 100%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 40%, rgba(11, 18, 32, 0.55) 0%, rgba(11, 18, 32, 0) 60%);
+      pointer-events: none;
+    }
+
+    .hero-wordmark {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .script-accent {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #fff;
+      opacity: 0.95;
+    }
+
+    .pink-swash {
+      display: inline-block;
+      width: 72px;
+      height: 3px;
+      background: var(--paradise-pink);
+      border-radius: 4px;
+    }
+
+    /* Service card */
+    .service-card {
+      background: #fff;
+      border: 1px solid rgba(11, 18, 32, 0.06);
+      border-radius: 1rem;
+      padding: 1.25rem 1.25rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px -22px rgba(28, 107, 148, 0.3);
+      border-color: rgba(46, 156, 214, 0.3);
+    }
+    .service-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(46, 156, 214, 0.1);
+      color: var(--paradise-blue-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Stats */
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .stat-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--paradise-blue);
+      box-shadow: 0 0 0 4px rgba(46, 156, 214, 0.25);
+    }
+
+    /* Step card */
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      background: var(--paradise-blue);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 24px -8px rgba(46, 156, 214, 0.55);
+    }
+
+    /* Diff card */
+    .diff-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(11, 18, 32, 0.06);
+      box-shadow: 0 20px 45px -28px rgba(11, 18, 32, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .diff-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 28px 50px -24px rgba(11, 18, 32, 0.28);
+    }
+
+    /* Testimonial */
+    .quote-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(11, 18, 32, 0.06);
+      box-shadow: 0 20px 45px -28px rgba(11, 18, 32, 0.18);
+      position: relative;
+    }
+    .star-row { color: #F6B63A; display: inline-flex; gap: 2px; }
+    .star-row svg { width: 18px; height: 18px; }
+
+    /* Form */
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #4b5563;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      background: #fff;
+      border: 1px solid rgba(11, 18, 32, 0.12);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      font-size: 0.98rem;
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--paradise-blue);
+      box-shadow: 0 0 0 4px rgba(46, 156, 214, 0.18);
+    }
+
+    /* Small helpers */
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.4;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .hero { min-height: 92vh; }
+    }
+  </style>
+</head>
+<body class="bg-white text-ink">
+
+  <!-- ============================ NAV ============================ -->
+  <header id="site-nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 py-3">
+      <a href="#top" class="flex items-center gap-3" aria-label="Paradise Pools home">
+        <img src="assets/logo.jpeg" alt="Paradise Pools & Pressure Cleaning logo" class="h-11 w-auto rounded-md bg-white/90 p-1 shadow-sm" />
+        <span class="hidden sm:flex flex-col leading-tight">
+          <span class="font-display font-bold text-[1.02rem] nav-link">Paradise Pools</span>
+          <span class="text-[0.72rem] brand-tag">&amp; Pressure Cleaning</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-7">
+        <a href="#services" class="nav-link link-underline text-[0.95rem]">Services</a>
+        <a href="#process" class="nav-link link-underline text-[0.95rem]">Process</a>
+        <a href="#why" class="nav-link link-underline text-[0.95rem]">Why Us</a>
+        <a href="#contact" class="nav-link link-underline text-[0.95rem]">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="tel:+19547896216" class="phone-pill hidden sm:inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[0.9rem] font-medium" aria-label="Call Broward office at 954-789-6216">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          <span class="hidden lg:inline">(954) 789-6216</span>
+          <span class="lg:hidden">Call</span>
+        </a>
+        <a href="#contact" class="btn-primary text-[0.9rem] py-2.5 px-4">
+          Get a Free Quote
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero flex items-end" aria-label="Hero">
+    <!-- TODO: replace with real Paradise Pools photo -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16 sm:pt-40 sm:pb-20 lg:pb-28">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="pink-swash" aria-hidden="true"></span>
+          <span class="text-white/90 tracking-[0.22em] text-[0.72rem] font-semibold uppercase">Broward &amp; Miami-Dade, FL</span>
+        </div>
+
+        <h1 class="hero-wordmark text-white text-[3rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-[9rem]">
+          PARADISE<br class="sm:hidden"/><span class="sm:inline"> POOLS</span>
+        </h1>
+        <p class="script-accent text-white text-2xl sm:text-3xl md:text-4xl mt-1 mb-7">&amp; Pressure Cleaning</p>
+
+        <p class="font-display font-bold text-white text-xl sm:text-2xl md:text-[1.65rem] leading-snug max-w-3xl">
+          Crystal-Clear Pools. Spotless Surfaces. Weekends You Actually Enjoy.
+        </p>
+        <p class="text-white/85 text-base sm:text-lg mt-4 max-w-2xl">
+          Professional pool service and pressure cleaning for homeowners across Broward and Miami-Dade.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+          <a href="#contact" class="btn-primary text-base">
+            Get a Free Quote
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="tel:+19547896216" class="btn-outline-white text-base">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Call (954) 789-6216
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-14 sm:mt-16 flex flex-wrap gap-3">
+        <span class="stat-pill"><span class="stat-dot" aria-hidden="true"></span>500+ Pools Serviced</span>
+        <span class="stat-pill"><span class="stat-dot" aria-hidden="true"></span>Licensed &amp; Insured</span>
+        <span class="stat-pill"><span class="stat-dot" aria-hidden="true"></span>Same-Week Service</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ EMPATHY / AUTHORITY ============================ -->
+  <section class="bg-mist" aria-labelledby="guide-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+      <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div class="reveal">
+          <span class="eyebrow">We get it</span>
+          <h2 id="guide-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+            Florida pools are a lot of work.<br/>
+            <span class="text-paradise-blue-dark">You shouldn't have to do it alone.</span>
+          </h2>
+          <p class="mt-5 text-lg text-slate-700 leading-relaxed">
+            Between the heat, the algae, the chemistry swings and those surprise summer storms, keeping a South Florida pool dialed in is a full-time job. We know — we've been doing it for over a decade. The good news? You don't have to spend another Saturday fighting your skimmer basket.
+          </p>
+          <div class="mt-6 flex items-center gap-4 text-slate-600">
+            <span class="inline-flex items-center gap-2"><i data-lucide="sun" class="w-5 h-5 text-paradise-blue"></i>Florida heat</span>
+            <span class="divider-dot"></span>
+            <span class="inline-flex items-center gap-2"><i data-lucide="droplets" class="w-5 h-5 text-paradise-blue"></i>Chemistry</span>
+            <span class="divider-dot"></span>
+            <span class="inline-flex items-center gap-2"><i data-lucide="cloud-lightning" class="w-5 h-5 text-paradise-blue"></i>Storms</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-7 sm:p-9 shadow-card border border-slate-100">
+            <span class="eyebrow">Your Guide</span>
+            <h3 class="font-display font-bold text-2xl sm:text-3xl mt-3 text-ink">
+              10+ years keeping South Florida pools pristine.
+            </h3>
+            <p class="mt-4 text-slate-700 leading-relaxed">
+              Fully licensed and insured. Family-run. Locally operated. We show up when we say we will, tell you exactly what your pool needs, and leave your property looking better than we found it.
+            </p>
+            <ul class="mt-6 grid grid-cols-2 gap-3 text-slate-700">
+              <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5 text-paradise-blue"></i>Licensed &amp; Insured</li>
+              <li class="flex items-center gap-2"><i data-lucide="home" class="w-5 h-5 text-paradise-blue"></i>Family-Run</li>
+              <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-paradise-blue"></i>Local to SoFL</li>
+              <li class="flex items-center gap-2"><i data-lucide="calendar-check" class="w-5 h-5 text-paradise-blue"></i>Same-Week Service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <section id="services" class="bg-white" aria-labelledby="services-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">What we do</span>
+        <h2 id="services-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+          Everything Your Pool &amp; Property Needs — In One Call.
+        </h2>
+        <p class="mt-4 text-lg text-slate-700">
+          From weekly pool care to deep cleaning your deck and driveway, we handle it all.
+        </p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-2 gap-10 lg:gap-14">
+        <!-- POOL -->
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+              <i data-lucide="waves" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-display font-bold text-2xl text-ink">Pool Service</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Salt System Maintenance</h4>
+                <p class="text-sm text-slate-600 mt-1">Keep your salt cell efficient and your water silky.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="flask-conical" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Chemical Balance</h4>
+                <p class="text-sm text-slate-600 mt-1">Weekly testing and balancing so your water stays clear and safe.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="microscope" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Water Analysis</h4>
+                <p class="text-sm text-slate-600 mt-1">Deep-dive diagnostics when something's off.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="filter" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Filter Cleaning</h4>
+                <p class="text-sm text-slate-600 mt-1">Clean filters = clear pool and lower energy bills.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="git-branch" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Drain Cleaning</h4>
+                <p class="text-sm text-slate-600 mt-1">Prevent backups and keep circulation strong.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="wind" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Vacuum Cleaning</h4>
+                <p class="text-sm text-slate-600 mt-1">Debris, algae, and sediment — gone.</p>
+              </div>
+            </div>
+            <div class="service-card sm:col-span-2">
+              <span class="service-icon"><i data-lucide="beaker" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Acid Wash</h4>
+                <p class="text-sm text-slate-600 mt-1">Bring a stained or green pool back to life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESSURE -->
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+              <i data-lucide="spray-can" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-display font-bold text-2xl text-ink">Pressure Cleaning</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="layout-grid" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Pool Decks</h4>
+                <p class="text-sm text-slate-600 mt-1">Remove slippery grime and restore the surface around your pool.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="car" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Driveways &amp; Walkways</h4>
+                <p class="text-sm text-slate-600 mt-1">Curb appeal, instantly.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="sofa" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Patios &amp; Lanais</h4>
+                <p class="text-sm text-slate-600 mt-1">Entertainment-ready in a single visit.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="house" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Roof Soft-Wash</h4>
+                <p class="text-sm text-slate-600 mt-1">Kill algae and streaks without damaging shingles.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="panel-top" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Exterior Siding</h4>
+                <p class="text-sm text-slate-600 mt-1">Whole-home refresh.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <span class="service-icon"><i data-lucide="shield" class="w-5 h-5"></i></span>
+              <div>
+                <h4 class="font-semibold text-ink">Paver Sealing</h4>
+                <p class="text-sm text-slate-600 mt-1">Protect and enhance after cleaning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14 text-center reveal">
+        <a href="#contact" class="btn-primary text-base">
+          See if We Cover Your Address
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROCESS ============================ -->
+  <section id="process" class="bg-mist" aria-labelledby="process-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">The plan</span>
+        <h2 id="process-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+          A Spotless Pool in Three Simple Steps.
+        </h2>
+        <p class="mt-4 text-lg text-slate-700">No contracts. No runaround. Just clean water and clean surfaces — on schedule.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="diff-card reveal">
+          <span class="step-number">1</span>
+          <h3 class="font-display font-bold text-xl mt-5 text-ink">Call or Request a Quote</h3>
+          <p class="mt-2 text-slate-700">Tell us about your pool and property. Free estimate, no pressure.</p>
+          <a href="tel:+19547896216" class="inline-flex items-center gap-2 mt-5 text-paradise-blue-dark font-semibold link-underline">
+            <i data-lucide="phone" class="w-4 h-4"></i> (954) 789-6216
+          </a>
+        </div>
+        <div class="diff-card reveal">
+          <span class="step-number">2</span>
+          <h3 class="font-display font-bold text-xl mt-5 text-ink">Get a Custom Service Plan</h3>
+          <p class="mt-2 text-slate-700">We assess your system and tailor a weekly, bi-weekly, or one-time service.</p>
+          <span class="inline-flex items-center gap-2 mt-5 text-paradise-blue-dark font-semibold">
+            <i data-lucide="clipboard-check" class="w-4 h-4"></i> Tailored to your pool
+          </span>
+        </div>
+        <div class="diff-card reveal">
+          <span class="step-number">3</span>
+          <h3 class="font-display font-bold text-xl mt-5 text-ink">Relax While We Handle It</h3>
+          <p class="mt-2 text-slate-700">Come home to a crystal-clear pool and spotless surfaces. Every time.</p>
+          <span class="inline-flex items-center gap-2 mt-5 text-paradise-blue-dark font-semibold">
+            <i data-lucide="sun" class="w-4 h-4"></i> Enjoy your weekend
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY US ============================ -->
+  <section id="why" class="bg-white" aria-labelledby="why-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+        <div class="max-w-2xl">
+          <span class="eyebrow">Why Paradise Pools</span>
+          <h2 id="why-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+            The pool guy you'll actually recommend to your neighbor.
+          </h2>
+        </div>
+        <p class="text-slate-600 max-w-md">Four reasons homeowners across Broward and Miami-Dade keep Paradise Pools on speed dial.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="diff-card reveal">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </span>
+          <h3 class="font-display font-bold text-lg mt-4 text-ink">Licensed &amp; Insured</h3>
+          <p class="mt-1.5 text-slate-600 text-sm leading-relaxed">Fully credentialed so you're covered — every visit.</p>
+        </div>
+        <div class="diff-card reveal">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </span>
+          <h3 class="font-display font-bold text-lg mt-4 text-ink">Local &amp; Family-Run</h3>
+          <p class="mt-1.5 text-slate-600 text-sm leading-relaxed">South Florida neighbors serving South Florida homes.</p>
+        </div>
+        <div class="diff-card reveal">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+            <i data-lucide="receipt" class="w-6 h-6"></i>
+          </span>
+          <h3 class="font-display font-bold text-lg mt-4 text-ink">Transparent Pricing</h3>
+          <p class="mt-1.5 text-slate-600 text-sm leading-relaxed">Upfront quotes. No surprise fees. No long contracts.</p>
+        </div>
+        <div class="diff-card reveal">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-paradise-blue/10 text-paradise-blue-dark">
+            <i data-lucide="calendar-check" class="w-6 h-6"></i>
+          </span>
+          <h3 class="font-display font-bold text-lg mt-4 text-ink">Same-Week Availability</h3>
+          <p class="mt-1.5 text-slate-600 text-sm leading-relaxed">Call today, meet us this week. Most of the time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TESTIMONIALS ============================ -->
+  <!-- SAMPLE copy — replace with real reviews before launch -->
+  <section class="bg-mist" aria-labelledby="reviews-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">Reviews from our customers</span>
+        <h2 id="reviews-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+          Homeowners who finally have their weekends back.
+        </h2>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <!-- SAMPLE -->
+        <figure class="quote-card reveal">
+          <div class="star-row mb-3" aria-label="5 out of 5 stars">
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+          </div>
+          <blockquote class="text-ink text-lg leading-relaxed">
+            "Paradise Pools turned our green pool around in one week. Now it's the nicest one on the block."
+          </blockquote>
+          <figcaption class="mt-5 text-slate-600 text-sm">
+            <span class="font-semibold text-ink">Maria R.</span> · Plantation, FL
+          </figcaption>
+        </figure>
+        <!-- SAMPLE -->
+        <figure class="quote-card reveal">
+          <div class="star-row mb-3" aria-label="5 out of 5 stars">
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+          </div>
+          <blockquote class="text-ink text-lg leading-relaxed">
+            "They showed up when they said, explained everything, fair price. Finally a pool guy I can trust."
+          </blockquote>
+          <figcaption class="mt-5 text-slate-600 text-sm">
+            <span class="font-semibold text-ink">Jeff T.</span> · Pembroke Pines, FL
+          </figcaption>
+        </figure>
+        <!-- SAMPLE -->
+        <figure class="quote-card reveal">
+          <div class="star-row mb-3" aria-label="5 out of 5 stars">
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+            <i data-lucide="star" fill="currentColor"></i>
+          </div>
+          <blockquote class="text-ink text-lg leading-relaxed">
+            "They pressure-washed the driveway and deck — looks brand new. Booked them monthly."
+          </blockquote>
+          <figcaption class="mt-5 text-slate-600 text-sm">
+            <span class="font-semibold text-ink">Andrea S.</span> · Coral Gables, FL
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FINAL CTA ============================ -->
+  <section aria-labelledby="final-cta-title" class="relative overflow-hidden" style="background: linear-gradient(135deg, #1C6B94 0%, #165778 60%, #0E4664 100%);">
+    <!-- decorative ripple -->
+    <div aria-hidden="true" class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.25) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(46,156,214,0.4) 0%, transparent 45%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center reveal">
+      <h2 id="final-cta-title" class="font-display font-extrabold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight max-w-4xl mx-auto">
+        Ready for the pool you actually want to swim in?
+      </h2>
+      <p class="text-white/85 text-lg sm:text-xl mt-5 max-w-2xl mx-auto">
+        Free quotes. Same-week service. No contracts required.
+      </p>
+      <div class="mt-9 flex flex-wrap justify-center gap-3 sm:gap-4">
+        <a href="#contact" class="btn-on-dark text-base">
+          Get a Free Quote
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="tel:+19547896216" class="btn-outline-white text-base">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          Call (954) 789-6216
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section id="contact" class="bg-white" aria-labelledby="contact-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-3xl mb-12 reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2 id="contact-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mt-3 text-ink">
+          Two offices. One promise: your pool, perfect.
+        </h2>
+        <p class="mt-4 text-lg text-slate-700">Reach out for a free quote or same-week service in Broward or Miami-Dade.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <!-- LEFT -->
+        <div class="reveal">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="tel:+19547896216" class="diff-card block group" aria-label="Call Broward office at 954 789 6216">
+              <span class="eyebrow">Broward County</span>
+              <div class="flex items-center gap-3 mt-3">
+                <span class="inline-flex w-11 h-11 items-center justify-center rounded-xl bg-paradise-blue/10 text-paradise-blue-dark group-hover:bg-paradise-blue group-hover:text-white transition-colors">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </span>
+                <span class="font-display font-bold text-2xl sm:text-[1.6rem] text-ink group-hover:text-paradise-blue-dark transition-colors">954.789.6216</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-3">Tap to call · Free quotes</p>
+            </a>
+            <a href="tel:+13057104950" class="diff-card block group" aria-label="Call Miami-Dade office at 305 710 4950">
+              <span class="eyebrow">Miami-Dade County</span>
+              <div class="flex items-center gap-3 mt-3">
+                <span class="inline-flex w-11 h-11 items-center justify-center rounded-xl bg-paradise-blue/10 text-paradise-blue-dark group-hover:bg-paradise-blue group-hover:text-white transition-colors">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </span>
+                <span class="font-display font-bold text-2xl sm:text-[1.6rem] text-ink group-hover:text-paradise-blue-dark transition-colors">305.710.4950</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-3">Tap to call · Free quotes</p>
+            </a>
+          </div>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <div class="diff-card">
+              <span class="eyebrow">Service Area</span>
+              <div class="flex items-center gap-3 mt-3 text-ink">
+                <i data-lucide="map-pin" class="w-5 h-5 text-paradise-blue"></i>
+                <span class="font-semibold">Broward &amp; Miami-Dade</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-2">Serving all of South Florida's east coast.</p>
+            </div>
+            <div class="diff-card">
+              <span class="eyebrow">Hours</span>
+              <div class="flex items-center gap-3 mt-3 text-ink">
+                <i data-lucide="clock" class="w-5 h-5 text-paradise-blue"></i>
+                <span class="font-semibold">Mon–Sat, 7 AM – 6 PM</span>
+              </div>
+              <p class="text-sm text-slate-600 mt-2">Closed Sundays · Emergencies welcome.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl overflow-hidden border border-slate-100 shadow-card">
+            <div class="relative aspect-[16/10] bg-gradient-to-br from-paradise-blue/15 via-paradise-blue/5 to-mist flex items-center justify-center">
+              <div class="text-center px-6">
+                <i data-lucide="map" class="w-10 h-10 text-paradise-blue mx-auto"></i>
+                <p class="font-display font-bold text-ink text-xl mt-3">Proudly serving South Florida</p>
+                <p class="text-slate-600 text-sm mt-1">Fort Lauderdale · Plantation · Pembroke Pines · Miami · Coral Gables · Hialeah · Aventura · and surrounding areas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="reveal">
+          <div class="bg-mist rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-card">
+            <h3 class="font-display font-bold text-2xl text-ink">Request a Quote</h3>
+            <p class="text-slate-700 mt-2">Tell us a little about your property and we'll get back to you this week.</p>
+
+            <!-- TODO: wire up to real form handler -->
+            <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="event.preventDefault(); return false;" aria-label="Request a quote (preview only)">
+              <div class="field sm:col-span-1">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Homeowner" />
+              </div>
+              <div class="field sm:col-span-1">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(954) 555-0123" />
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="f-service">Which service?</label>
+                <select id="f-service" name="service">
+                  <option>Weekly Pool Service</option>
+                  <option>One-Time Pool Cleaning</option>
+                  <option>Salt System / Chemistry</option>
+                  <option>Acid Wash</option>
+                  <option>Pressure Cleaning — Driveway / Deck</option>
+                  <option>Pressure Cleaning — Roof / Siding</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="f-message">Message</label>
+                <textarea id="f-message" name="message" rows="4" placeholder="Tell us about your pool or property…"></textarea>
+              </div>
+              <div class="sm:col-span-2 flex flex-wrap items-center gap-3 pt-1">
+                <button type="submit" class="btn-primary">
+                  Send Request
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <a href="tel:+19547896216" class="link-underline text-paradise-blue-dark font-semibold">or call (954) 789-6216</a>
+              </div>
+              <p class="sm:col-span-2 text-xs text-slate-500 mt-1">Preview form — submissions aren't sent anywhere yet.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-ink text-white/85">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3">
+            <img src="assets/logo.jpeg" alt="Paradise Pools & Pressure Cleaning logo" class="h-12 w-auto rounded-md bg-white p-1" />
+            <div class="leading-tight">
+              <div class="font-display font-bold text-white text-lg">Paradise Pools</div>
+              <div class="text-white/70 text-xs">&amp; Pressure Cleaning</div>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/70 leading-relaxed max-w-xs">
+            Crystal-clear pools and spotless surfaces for South Florida homeowners. Family-run. Licensed &amp; insured.
+          </p>
+          <div class="mt-4 flex items-center gap-3 text-white/60">
+            <a href="#" aria-label="Facebook" class="hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Instagram" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Google Reviews" class="hover:text-white"><i data-lucide="star" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider">Services</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a href="#services" class="hover:text-white">Pool Service</a></li>
+            <li><a href="#services" class="hover:text-white">Salt System Maintenance</a></li>
+            <li><a href="#services" class="hover:text-white">Chemical Balance</a></li>
+            <li><a href="#services" class="hover:text-white">Acid Wash</a></li>
+            <li><a href="#services" class="hover:text-white">Pressure Cleaning</a></li>
+            <li><a href="#services" class="hover:text-white">Roof Soft-Wash</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider">Service Area</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>Broward County</li>
+            <li>Miami-Dade County</li>
+            <li>Fort Lauderdale</li>
+            <li>Pembroke Pines</li>
+            <li>Miami · Coral Gables</li>
+            <li>Aventura · Hialeah</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider">Contact</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a href="tel:+19547896216" class="hover:text-white inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> (954) 789-6216 — Broward</a></li>
+            <li><a href="tel:+13057104950" class="hover:text-white inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> (305) 710-4950 — Miami-Dade</a></li>
+            <li class="inline-flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i> Mon–Sat, 7 AM – 6 PM</li>
+            <li class="inline-flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> South Florida</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-white/60">
+        <p>&copy; 2026 Paradise Pools &amp; Pressure Cleaning. Licensed &amp; Insured.</p>
+        <p class="text-white/50">Preliminary concept site — for review purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ JS ============================ -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Render Lucide icons
+    if (window.lucide) lucide.createIcons();
+
+    // Nav solidify on scroll
+    const nav = document.getElementById('site-nav');
+    const onScroll = () => {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+      revealEls.forEach((el) => io.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('in'));
+    }
+  </script>
+</body>
+</html>
