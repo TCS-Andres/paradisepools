@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pp-loading">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paradise Pools & Pressure Cleaning — Broward & Miami-Dade</title>
   <meta name="description" content="Professional pool service and pressure cleaning for homeowners across Broward and Miami-Dade. Crystal-clear pools, spotless surfaces, weekends you actually enjoy." />
+
+  <!-- Preloader hides before any paint so there's no flash of unstyled content -->
+  <style>
+    html.pp-loading, html.pp-loading body { overflow: hidden; }
+    #pp-preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: center;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 10%, rgba(46, 156, 214, 0.55) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 90% 100%, rgba(232, 82, 138, 0.2) 0%, transparent 60%),
+        linear-gradient(135deg, #1C6B94 0%, #0F4867 55%, #041828 100%);
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    html:not(.pp-loading) #pp-preloader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -492,6 +511,135 @@
     #zoom-parallax .zp-item[data-i="5"] .zp-img { top:  32vh; left:  0vw;  height: 22vh; width: 28vw; }
     #zoom-parallax .zp-item[data-i="6"] .zp-img { top:  28vh; left:  30vw; height: 20vh; width: 18vw; }
 
+    /* ===== Preloader detail styles ===== */
+    #pp-preloader .pp-stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    /* Expanding water ripples */
+    #pp-preloader .pp-ripple {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 140px;
+      height: 140px;
+      margin-left: -70px;
+      margin-top: -70px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      transform: scale(0.3);
+      opacity: 0;
+      animation: ppRipple 2.6s cubic-bezier(0.16, 0.7, 0.3, 1) infinite;
+      pointer-events: none;
+    }
+    #pp-preloader .pp-ripple:nth-child(2) { animation-delay: 0.65s; border-color: rgba(46, 156, 214, 0.75); }
+    #pp-preloader .pp-ripple:nth-child(3) { animation-delay: 1.3s; border-color: rgba(232, 82, 138, 0.55); }
+    #pp-preloader .pp-ripple:nth-child(4) { animation-delay: 1.95s; border-color: rgba(255, 255, 255, 0.35); }
+    @keyframes ppRipple {
+      0%   { transform: scale(0.3); opacity: 0; border-width: 3px; }
+      15%  { opacity: 0.85; }
+      100% { transform: scale(3.6); opacity: 0; border-width: 1px; }
+    }
+
+    /* Water droplet — the pulse that triggers the ripples */
+    #pp-preloader .pp-droplet {
+      width: 54px;
+      height: 72px;
+      position: relative;
+      animation: ppDroplet 2.6s ease-in-out infinite;
+    }
+    #pp-preloader .pp-droplet::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, #CFEAF8 40%, #2E9CD6 100%);
+      clip-path: path('M27 2 C 12 22, 2 40, 2 52 A 25 25 0 0 0 52 52 C 52 40, 42 22, 27 2 Z');
+      filter: drop-shadow(0 10px 20px rgba(4, 26, 40, 0.45));
+    }
+    #pp-preloader .pp-droplet::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 14px;
+      width: 12px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+    @keyframes ppDroplet {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-6px) scale(1.03); }
+    }
+
+    /* Wordmark */
+    #pp-preloader .pp-wordmark {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      text-align: center;
+      line-height: 1;
+      background: linear-gradient(90deg, #FFFFFF 0%, #CFEAF8 50%, #FFFFFF 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: ppShimmer 3s linear infinite;
+    }
+    #pp-preloader .pp-sub {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      margin-top: 0.25rem;
+      letter-spacing: 0.01em;
+    }
+    @keyframes ppShimmer {
+      0%   { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Pool-filling progress bar */
+    #pp-preloader .pp-bar {
+      width: min(320px, 70vw);
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    #pp-preloader .pp-bar::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 30%;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #FFFFFF 50%, rgba(255,255,255,0) 100%);
+      animation: ppBar 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(207, 234, 248, 0.8);
+    }
+    @keyframes ppBar {
+      0%   { transform: translateX(-120%); }
+      100% { transform: translateX(400%); }
+    }
+
+    #pp-preloader .pp-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
     @media (max-width: 640px) {
       .hero { min-height: 92vh; }
       #zoom-parallax { height: 200vh; }
@@ -506,6 +654,25 @@
   </style>
 </head>
 <body class="bg-white text-ink">
+
+  <!-- ============================ PRELOADER ============================ -->
+  <div id="pp-preloader" role="status" aria-live="polite" aria-label="Loading Paradise Pools">
+    <div class="pp-stage">
+      <div style="position: relative; width: 200px; height: 180px; display: flex; align-items: center; justify-content: center;">
+        <span class="pp-ripple" aria-hidden="true"></span>
+        <span class="pp-ripple" aria-hidden="true"></span>
+        <span class="pp-ripple" aria-hidden="true"></span>
+        <span class="pp-ripple" aria-hidden="true"></span>
+        <div class="pp-droplet" aria-hidden="true"></div>
+      </div>
+      <div style="text-align: center;">
+        <div class="pp-wordmark">PARADISE POOLS</div>
+        <div class="pp-sub">&amp; Pressure Cleaning</div>
+      </div>
+      <div class="pp-bar" aria-hidden="true"></div>
+      <div class="pp-label">Filling the pool…</div>
+    </div>
+  </div>
 
   <!-- ============================ NAV ============================ -->
   <header id="site-nav" class="fixed top-0 inset-x-0 z-50">
@@ -1184,6 +1351,29 @@
   <!-- ============================ JS ============================ -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
+    // ============================ PRELOADER ============================
+    (function () {
+      const html = document.documentElement;
+      const start = performance.now();
+      const MIN_DISPLAY = 900; // ms — always show at least one ripple cycle
+      const HARD_LIMIT = 6000; // ms — never hang the page on a stuck asset
+      function hide() {
+        const elapsed = performance.now() - start;
+        const wait = Math.max(0, MIN_DISPLAY - elapsed);
+        setTimeout(function () {
+          html.classList.remove('pp-loading');
+          // Drop the DOM after the fade so it doesn't block pointer events
+          setTimeout(function () {
+            const el = document.getElementById('pp-preloader');
+            if (el && el.parentNode) el.parentNode.removeChild(el);
+          }, 800);
+        }, wait);
+      }
+      if (document.readyState === 'complete') hide();
+      else window.addEventListener('load', hide, { once: true });
+      setTimeout(hide, HARD_LIMIT);
+    })();
+
     // Render Lucide icons
     if (window.lucide) lucide.createIcons();
 
