@@ -433,10 +433,15 @@
     }
 
     /* ===== Zoom Parallax ===== */
+    .zp-intro-band {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FB 100%);
+      padding: 4rem 1rem 2.5rem;
+      text-align: center;
+    }
     #zoom-parallax {
       position: relative;
-      height: 300vh;
-      background: linear-gradient(180deg, #FFFFFF 0%, #EAF3F9 100%);
+      height: 260vh;
+      background: linear-gradient(180deg, #F4F8FB 0%, #EAF3F9 100%);
     }
     #zoom-parallax .zp-sticky {
       position: sticky;
@@ -444,53 +449,53 @@
       height: 100vh;
       overflow: hidden;
     }
-    #zoom-parallax .zp-intro {
-      position: absolute;
-      top: 6vh;
-      left: 0;
-      right: 0;
-      z-index: 5;
-      text-align: center;
-      padding: 0 1rem;
-      pointer-events: none;
-    }
     #zoom-parallax .zp-item {
       position: absolute;
       top: 0;
+      left: 0;
       display: flex;
       height: 100%;
       width: 100%;
       align-items: center;
       justify-content: center;
       will-change: transform;
+      transform-origin: 50% 50%;
+      backface-visibility: hidden;
     }
     #zoom-parallax .zp-img {
       position: relative;
       height: 25vh;
       width: 25vw;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 30px 60px -30px rgba(4, 26, 40, 0.55);
+      box-shadow: 0 30px 60px -30px rgba(4, 26, 40, 0.45);
+      transform: translateZ(0);
     }
     #zoom-parallax .zp-img img {
       height: 100%;
       width: 100%;
       object-fit: cover;
       display: block;
+      image-rendering: -webkit-optimize-contrast;
     }
-    /* Each .zp-img is a flex child of a flex-centered parent, so it starts centered.
-       Using position: relative with top/left shifts it AS AN OFFSET from center,
-       matching the original React component's layout intent. */
-    #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -30vh; left: 10vw; height: 30vh; width: 35vw; }
-    #zoom-parallax .zp-item[data-i="2"] .zp-img { top: -8vh; left: -32vw; height: 40vh; width: 22vw; }
-    #zoom-parallax .zp-item[data-i="3"] .zp-img { top: -2vh; left: 32vw; height: 26vh; width: 22vw; }
-    #zoom-parallax .zp-item[data-i="4"] .zp-img { top: 30vh; left: -30vw; height: 24vh; width: 22vw; }
-    #zoom-parallax .zp-item[data-i="5"] .zp-img { top: 32vh; left: 5vw; height: 24vh; width: 28vw; }
-    #zoom-parallax .zp-item[data-i="6"] .zp-img { top: 32vh; left: 32vw; height: 20vh; width: 18vw; }
+    /* Satellite tiles offset from the flex-centered anchor. */
+    #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -32vh; left: 0vw;    height: 28vh; width: 30vw; }
+    #zoom-parallax .zp-item[data-i="2"] .zp-img { top:  -6vh; left: -32vw; height: 34vh; width: 20vw; }
+    #zoom-parallax .zp-item[data-i="3"] .zp-img { top:  -4vh; left:  32vw; height: 26vh; width: 20vw; }
+    #zoom-parallax .zp-item[data-i="4"] .zp-img { top:  28vh; left: -30vw; height: 22vh; width: 20vw; }
+    #zoom-parallax .zp-item[data-i="5"] .zp-img { top:  32vh; left:  0vw;  height: 22vh; width: 28vw; }
+    #zoom-parallax .zp-item[data-i="6"] .zp-img { top:  28vh; left:  30vw; height: 20vh; width: 18vw; }
 
     @media (max-width: 640px) {
       .hero { min-height: 92vh; }
-      #zoom-parallax { height: 220vh; }
+      #zoom-parallax { height: 200vh; }
+      #zoom-parallax .zp-img { width: 40vw; height: 22vh; }
+      #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -26vh; left:  0vw;  height: 22vh; width: 42vw; }
+      #zoom-parallax .zp-item[data-i="2"] .zp-img { top:  -6vh; left: -32vw; height: 26vh; width: 24vw; }
+      #zoom-parallax .zp-item[data-i="3"] .zp-img { top:  -4vh; left:  32vw; height: 22vh; width: 24vw; }
+      #zoom-parallax .zp-item[data-i="4"] .zp-img { top:  22vh; left: -30vw; height: 18vh; width: 26vw; }
+      #zoom-parallax .zp-item[data-i="5"] .zp-img { top:  26vh; left:   0vw; height: 18vh; width: 40vw; }
+      #zoom-parallax .zp-item[data-i="6"] .zp-img { top:  22vh; left:  30vw; height: 16vh; width: 22vw; }
     }
   </style>
 </head>
@@ -573,17 +578,18 @@
     </div>
   </section>
 
-  <!-- ============================ ZOOM PARALLAX ============================ -->
-  <section id="zoom-parallax" aria-label="Paradise Pools gallery">
-    <div class="zp-sticky">
-      <div class="zp-intro">
-        <span class="eyebrow">A day in the life</span>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink mt-2 tracking-tight">
-          See what "paradise" looks like.
-        </h2>
-        <p class="mt-3 text-slate-700 max-w-xl mx-auto text-sm sm:text-base">Scroll to zoom through our work.</p>
-      </div>
+  <!-- ============================ PARALLAX INTRO ============================ -->
+  <section class="zp-intro-band" aria-label="Paradise Pools gallery intro">
+    <span class="eyebrow">A day in the life</span>
+    <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-ink mt-2 tracking-tight">
+      See what "paradise" looks like.
+    </h2>
+    <p class="mt-3 text-slate-700 max-w-xl mx-auto text-sm sm:text-base">Scroll down to zoom through our work.</p>
+  </section>
 
+  <!-- ============================ ZOOM PARALLAX ============================ -->
+  <section id="zoom-parallax" aria-label="Paradise Pools zoom gallery">
+    <div class="zp-sticky">
       <!-- Center / primary image -->
       <div class="zp-item" data-zp-item data-i="0">
         <div class="zp-img">
@@ -1323,7 +1329,9 @@
       const items = Array.from(container.querySelectorAll('[data-zp-item]'));
       if (!items.length) return;
 
-      const scales = [4, 5, 6, 5, 6, 8, 9];
+      // Capped so a 4K source never gets magnified past its native resolution.
+      // Max scale 5 on a 25vw/25vh tile at a 1920px viewport = ~2400px — well under 4K.
+      const scales = [4, 4, 5, 4, 4, 5, 5];
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       let ticking = false;
 
