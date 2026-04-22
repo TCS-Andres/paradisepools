@@ -458,9 +458,7 @@
       width: 100%;
       align-items: center;
       justify-content: center;
-      will-change: transform;
       transform-origin: 50% 50%;
-      backface-visibility: hidden;
     }
     #zoom-parallax .zp-img {
       position: relative;
@@ -469,14 +467,16 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 30px 60px -30px rgba(4, 26, 40, 0.45);
-      transform: translateZ(0);
     }
     #zoom-parallax .zp-img img {
       height: 100%;
       width: 100%;
       object-fit: cover;
       display: block;
-      image-rendering: -webkit-optimize-contrast;
+      /* No image-rendering override — the browser default provides the
+         smoothest bilinear/bicubic filtering when scaling. Avoid
+         -webkit-optimize-contrast which forces nearest-neighbor and
+         causes the "pixelated" look at high zoom. */
     }
     /* Satellite tiles offset from the flex-centered anchor. */
     #zoom-parallax .zp-item[data-i="1"] .zp-img { top: -32vh; left: 0vw;    height: 28vh; width: 30vw; }
